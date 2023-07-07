@@ -1,0 +1,12 @@
+.drop-zone {
+  height: 300px;
+  display: flex;
+}
+
+.drop-zone div {
+  flex-grow: 1;
+}
+
+.drop-zone div.active {
+  background-color: #aaa;
+}
