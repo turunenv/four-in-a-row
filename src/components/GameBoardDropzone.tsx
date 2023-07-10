@@ -13,7 +13,6 @@ export const GameBoardDropzone = ({
   handleMouseLeave 
 }: DropzoneProps) => {
   const dropzoneDivs = [];
-  console.log('activecolumn is ', activeColumn);
 
   for (let i = 0; i < 7; i++) {
     const div = <div 

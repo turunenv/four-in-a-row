@@ -29,3 +29,7 @@
 .game-board-cell div.empty.hover-active {
   background-color: #ccc;
 }
+
+.game-board-cell div.empty.disk-preview {
+  background-color: red;
+}

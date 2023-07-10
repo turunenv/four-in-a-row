@@ -1,6 +1,7 @@
 import { ActiveDisk } from './ActiveDisk';
-import { GameBoardRow } from './GameBoardRow';
+import { GameBoardColumn } from './GameBoardColumn';
 
+import './styles/GameBoard.css';
 import { GameState } from '../types';
 
 interface GameBoardProps {
@@ -16,11 +17,11 @@ export const GameBoard = ({
 }: GameBoardProps) => {
   return (
     <div className="game-board">
-      {gameState.map((row, i) => (
-        <GameBoardRow 
+      {gameState.map((col, i) => (
+        <GameBoardColumn
           key={i}
-          activeHoverColumn={activeHoverColumn} 
-          row={row} 
+          isActiveHoverCol={i === activeHoverColumn} 
+          column={col} 
           nextDiskIndex={nextDiskIndeces[i]}
         />
       ))}
