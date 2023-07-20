@@ -6,7 +6,7 @@ interface ActiveDiskProps {
   playerOneIsNext: boolean;
 }
 
-export const ActiveDisk = ({ playerOneIsNext, winner }: ActiveDiskProps) => {
+export const ActiveDisk = ({ playerOneIsNext }: ActiveDiskProps) => {
   const [location, setLocation] = useState({ x: 400, y: 400 });
 
   const DISK_HEIGHT = 56;
