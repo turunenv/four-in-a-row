@@ -2,18 +2,19 @@ import { ActiveDisk } from './ActiveDisk';
 import { GameBoardColumn } from './GameBoardColumn';
 
 import './styles/GameBoard.css';
-import { GameState } from '../types';
+import { GameState, HasPlayerWon } from '../types';
 
 interface GameBoardProps {
   gameState: GameState;
   activeHoverColumn: number | null;
   nextDiskIndeces: (number | null)[];
+  playerOneIsNext: boolean;
 }
 
 export const GameBoard = ({ 
   gameState, 
   activeHoverColumn,
-  nextDiskIndeces
+  playerOneIsNext
 }: GameBoardProps) => {
   return (
     <div className="game-board">
@@ -22,7 +23,7 @@ export const GameBoard = ({
           key={i}
           isActiveHoverCol={i === activeHoverColumn} 
           column={col} 
-          nextDiskIndex={nextDiskIndeces[i]}
+          playerOneIsNext={playerOneIsNext}
         />
       ))}
     </div>

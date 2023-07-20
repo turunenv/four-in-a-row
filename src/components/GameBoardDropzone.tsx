@@ -4,13 +4,15 @@ interface DropzoneProps {
   activeColumn: number | null;
   handleMouseEnter: (id: number) => void;
   handleMouseLeave: () => void;
+  handleClick: (colNum: number) => void;
 }
 
 
 export const GameBoardDropzone = ({ 
   activeColumn, 
   handleMouseEnter, 
-  handleMouseLeave 
+  handleMouseLeave,
+  handleClick, 
 }: DropzoneProps) => {
   const dropzoneDivs = [];
 
@@ -19,6 +21,7 @@ export const GameBoardDropzone = ({
       key={i}
       className={`dropzone-${i} ${activeColumn === i ? 'active' : ''}`}
       onMouseEnter={() => handleMouseEnter(i)}
+      onClick={() => handleClick(i)}
       ></div>
 
       dropzoneDivs.push(div);

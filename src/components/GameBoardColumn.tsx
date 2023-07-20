@@ -6,23 +6,23 @@ import { GameBoardCell } from "./GameBoardCell";
 interface GameBoardColProps {
   column: GameColumn;
   isActiveHoverCol: boolean;
-  nextDiskIndex: number | null;
+  playerOneIsNext: boolean;
 }
 
-export const GameBoardColumn = ({ column, isActiveHoverCol, nextDiskIndex }: GameBoardColProps) => {
+export const GameBoardColumn = ({ column, isActiveHoverCol, playerOneIsNext }: GameBoardColProps) => {
+  
 
   return (
     <div className="game-board-col">
-      {column.map((status, i) => {
-        return (
+      {column.map((status, i) => (
           <GameBoardCell 
             status={status} 
             key={i} 
             hoverIsActive={isActiveHoverCol}
-            isNextDiskCell={isActiveHoverCol && nextDiskIndex === i} 
+            playerOneIsNext={playerOneIsNext}
           />
         )
-      }
+      
         
       )}
     </div>
