@@ -6,7 +6,7 @@ interface CellProps {
   playerOneIsNext: boolean;
 }
 
-export const GameBoardCell = ({ status, hoverIsActive, playerOneIsNext }: CellProps) => {
+export const GameBoardCell = ({ status, hoverIsActive }: CellProps) => {
   const statusClassName =
     status === 1
     ? 'player-1'
