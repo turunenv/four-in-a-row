@@ -9,12 +9,19 @@ interface ActiveDiskProps {
 export const ActiveDisk = ({ playerOneIsNext, winner }: ActiveDiskProps) => {
   const [location, setLocation] = useState({ x: 400, y: 400 });
 
+  const DISK_HEIGHT = 56;
+  const DISK_WIDTH = 56;
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setLocation({ x: e.clientX - 28, y: e.clientY + 10 });
+      console.log(`e.clientX: ${e.clientX}, vw: ${window.innerWidth}`)
+      setLocation({ 
+        x: Math.min(e.clientX - (DISK_HEIGHT / 2), window.innerWidth - DISK_WIDTH), 
+        y: Math.min(e.clientY + 10, window.innerHeight - DISK_HEIGHT) 
+      });
     }
 
-    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [])
