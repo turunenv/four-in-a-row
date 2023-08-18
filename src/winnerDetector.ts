@@ -42,10 +42,10 @@ function checkHorizontal(game: GameState): HasPlayerWon {
         return {
           player: game[j][i] as (1 | 2),
           indices: [
-            { col: i, row: j },
-            { col: i + 1, row: j },
-            { col: i + 2, row: j },
-            { col: i + 3, row: j }, 
+            { col: j, row: i },
+            { col: j + 1, row: i },
+            { col: j + 2, row: i },
+            { col: j + 3, row: i }, 
           ]
         }
       }
