@@ -91,11 +91,11 @@ function App() {
   }
 
   const gameHasStarted = nextDiskRowIndeces.some(idx => idx !== COL_LEN - 1);
+  console.log(winner);
 
   return (
     <div className="main-content">
       <h1>Four in a row</h1>
-      
       <WinnerHeader winner={winner} />
       
       { !winner && 

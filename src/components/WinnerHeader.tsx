@@ -5,8 +5,11 @@ interface WinnerHeaderProps {
 export const WinnerHeader = ({ winner }: WinnerHeaderProps) => {
   
   return (
-    <h2 className={`winner-header ${winner ? 'announce-winner': ''}`}>
-      Player {winner} has won!
-    </h2>
+    <div className="winner-header">
+      { winner &&
+        <h2>Player {winner} has won!</h2>
+      }
+    </div>
+    
   )
 }
