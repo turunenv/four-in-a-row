@@ -14,7 +14,6 @@ export const ActiveDisk = ({ playerOneIsNext }: ActiveDiskProps) => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      console.log(`e.clientX: ${e.clientX}, vw: ${window.innerWidth}`)
       setLocation({ 
         x: Math.min(e.clientX - (DISK_HEIGHT / 2), window.innerWidth - DISK_WIDTH), 
         y: Math.min(e.clientY + 10, window.innerHeight - DISK_HEIGHT) 
